@@ -18,7 +18,7 @@ const ProductCard = ({ item, favProd }) => {
                 <Link to={`/products/${item._id}`} style={{ textDecoration: 'none' }}>
                     <Card.Img style={{ height: "100%", width: "100%" }} src={item.imageCover} />
                 </Link>
-                <Card.Body >
+                <Card.Body style={{ backgroundColor: "rgba(176, 120, 123, 0.5)" }} >
                     <Card.Title>
                         <div className="card-title">
                             {item.title}

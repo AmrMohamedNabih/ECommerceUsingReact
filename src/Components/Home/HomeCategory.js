@@ -11,7 +11,7 @@ const HomeCategory = () => {
     return (
         <Container>
             <SubTiltle title="Categories" btntitle="More" pathText="/allcategory" />
-            <Row className='my-2 d-flex justify-content-between'>
+            <Row className='my-2 d-flex'>
                 {
                     loading === false ? (
                         category ? (
