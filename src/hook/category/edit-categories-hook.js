@@ -1,243 +1,93 @@
-import React, { useState, useEffect } from 'react'
-import { getOneCategory } from '../../redux/actions/subcategoryAction';
-import { createProduct, getOneProduct } from '../../redux/actions/productsAction';
-import notify from './../../hook/useNotifaction';
-import { useSelector, useDispatch } from 'react-redux'
-import { getAllCategory } from '../../redux/actions/categoryAction'
-import { getAllBrand } from './../../redux/actions/brandAction';
-import { updateProducts } from './../../redux/actions/productsAction';
-import baseUrl from './../../Api/baseURL';
+import React, { useState, useEffect } from "react";
+import { useSelector, useDispatch } from "react-redux";
+import {
+  updateCategory,
+  getOneCategory,
+} from "../../redux/actions/categoryAction";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import notify from "../../hook/useNotifaction";
+import avatar from "../../images/avatar.png";
 
-const AdminEditProductsHook = (id) => {
+const AdminEditCategoriesHook = (categoryId) => {
+  const dispatch = useDispatch();
+  const [img, setImg] = useState(avatar);
+  const [name, setName] = useState("");
+  const [selectedFile, setSelectedFile] = useState(null);
+  const [loading, setLoading] = useState(false);
+  const [isPress, setIsPress] = useState(false);
 
-    const dispatch = useDispatch();
-    useEffect(() => {
-        const run = async () => {
-            await dispatch(getOneProduct(id))
-            await dispatch(getAllCategory());
-            await dispatch(getAllBrand());
+  // Fetch category details
+  useEffect(() => {
+    const fetchCategory = async () => {
+      if (!categoryId) return;
+      try {
+        const response = await dispatch(getOneCategory(categoryId)); // ✅ Fix: Use correct function
+        if (response?.payload) {
+          setName(response.payload.name);
+          setImg(response.payload.image || avatar);
         }
-        run();
-    }, [])
-
-    // Get one product details
-    const item = useSelector((state) => state.allproducts.oneProduct)
-    // Get last category state from Redux
-    const category = useSelector(state => state.allCategory.category)
-    // Get last brand state from Redux
-    const brand = useSelector(state => state.allBrand.brand)
-
-    // Get last subcategory state from Redux
-    const subCat = useSelector(state => state.subCategory.subcategory)
-
-    const onSelect = (selectedList) => {
-        setSeletedSubID(selectedList)
-    }
-    const onRemove = (selectedList) => {
-        setSeletedSubID(selectedList)
-    }
-
-    const [options, setOptions] = useState([]);
-
-    // Product images
-    const [images, setImages] = useState([]);
-    // Product states
-    const [prodName, setProdName] = useState('');
-    const [prodDescription, setProdDescription] = useState('');
-    const [priceBefore, setPriceBefore] = useState('Price before discount');
-    const [priceAftr, setPriceAftr] = useState('Price after discount');
-    const [qty, setQty] = useState('Available quantity');
-    const [CatID, setCatID] = useState('0');
-    const [BrandID, SetBrandID] = useState('0');
-    const [subCatID, setSubCatID] = useState([]);
-    const [seletedSubID, setSeletedSubID] = useState([]);
-    const [loading, setLoading] = useState(true);
-
-    useEffect(() => {
-        if (item.data) {
-            console.log(item.data.images)
-            setImages(item.data.images)
-            setProdName(item.data.title)
-            setProdDescription(item.data.description)
-            setPriceBefore(item.data.price)
-            setQty(item.data.quantity)
-            setCatID(item.data.category)
-            SetBrandID(item.data.brand)
-            setColors(item.data.availableColors)
-        }
-    }, [item])
-
-    // Update state functions
-    const onChangeProdName = (event) => {
-        event.persist();
-        setProdName(event.target.value)
-    }
-    const onChangeDesName = (event) => {
-        event.persist();
-        setProdDescription(event.target.value)
-    }
-    const onChangePriceBefore = (event) => {
-        event.persist();
-        setPriceBefore(event.target.value)
-    }
-    const onChangePriceAfter = (event) => {
-        event.persist();
-        setPriceAftr(event.target.value)
-    }
-    const onChangeQty = (event) => {
-        event.persist();
-        setQty(event.target.value)
-    }
-    const onChangeColor = (event) => {
-        event.persist();
-        setShowColor(!showColor)
-    }
-
-    // Show/hide color picker
-    const [showColor, setShowColor] = useState(false);
-    // Store picked colors
-    const [colors, setColors] = useState([]);
-    // When choosing a new color
-    const handelChangeComplete = (color) => {
-        setColors([...colors, color.hex])
-        setShowColor(!showColor)
-    }
-    const removeColor = (color) => {
-        const newColor = colors.filter((e) => e !== color)
-        setColors(newColor)
-    }
-
-    // When selecting a category, store ID
-    const onSeletCategory = async (e) => {
-        setCatID(e.target.value)
-    }
-    useEffect(() => {
-        if (CatID != 0) {
-            const run = async () => {
-                await dispatch(getOneCategory(CatID))
-            }
-            run();
-        }
-    }, [CatID])
-
-    useEffect(() => {
-        if (subCat) {
-            setOptions(subCat.data)
-        }
-    }, [subCat])
-
-    // When selecting a brand, store ID
-    const onSeletBrand = (e) => {
-        SetBrandID(e.target.value)
-    }
-
-    // Convert base64 to file
-    function dataURLtoFile(dataurl, filename) {
-        var arr = dataurl.split(','),
-            mime = arr[0].match(/:(.*?);/)[1],
-            bstr = atob(arr[1]),
-            n = bstr.length,
-            u8arr = new Uint8Array(n);
-
-        while (n--) {
-            u8arr[n] = bstr.charCodeAt(n);
-        }
-
-        return new File([u8arr], filename, { type: mime });
-    }
-
-    // Convert URL to file
-    const convertURLtoFile = async (url) => {
-        const response = await fetch(url, { mode: "cors" });
-        const data = await response.blob();
-        const ext = url.split(".").pop();
-        const filename = url.split("/").pop();
-        const metadata = { type: `image/${ext}` };
-        return new File([data], Math.random(), metadata);
+      } catch (error) {
+        notify("Error fetching category details", "error");
+      }
     };
+    fetchCategory();
+  }, [categoryId, dispatch]);
 
-    // Save data
-    const handelSubmit = async (e) => {
-        e.preventDefault();
-        if (CatID === 0 || prodName === "" || prodDescription === "" || images.length <= 0 || priceBefore <= 0) {
-            notify("Please complete the data", "warn")
-            return;
-        }
-        console.log(images[0])
-        let imgCover;
-        if (images[0].length <= 1000) {
-            convertURLtoFile(images[0]).then(val => imgCover = val)
-        } else {
-            imgCover = dataURLtoFile(images[0], Math.random() + ".png")
-        }
+  // Change name state
+  const onChangeName = (event) => {
+    setName(event.target.value);
+  };
 
-        let itemImages = []
-        // Convert array of base64 images to files
-        Array.from(Array(Object.keys(images).length).keys()).map(
-            (item, index) => {
-                if (images[index].length <= 1000) {
-                    convertURLtoFile(images[index]).then(val => itemImages.push(val))
-                }
-                else {
-                    itemImages.push(dataURLtoFile(images[index], Math.random() + ".png"))
-                }
-            })
-
-        const formData = new FormData();
-        formData.append("title", prodName);
-        formData.append("description", prodDescription);
-        formData.append("quantity", qty);
-        formData.append("price", priceBefore);
-
-        formData.append("category", CatID);
-        formData.append("brand", BrandID);
-
-        setTimeout(() => {
-            formData.append("imageCover", imgCover);
-            itemImages.map((item) => formData.append("images", item))
-        }, 1000);
-
-        setTimeout(() => {
-            console.log(imgCover)
-            console.log(itemImages)
-        }, 1000);
-
-        colors.map((color) => formData.append("availableColors", color))
-        seletedSubID.map((item) => formData.append("subcategory", item._id))
-        setTimeout(async () => {
-            // setLoading(true)
-            //   await dispatch(updateProducts(id, formData))
-            //  setLoading(false)
-        }, 1000);
+  // Handle image change and save it
+  const onImageChange = (event) => {
+    if (event.target.files && event.target.files[0]) {
+      setImg(URL.createObjectURL(event.target.files[0]));
+      setSelectedFile(event.target.files[0]);
     }
+  };
 
-    // Get update message
-    const product = useSelector(state => state.allproducts.updateProducts)
+  const res = useSelector((state) => state.allCategory.category);
 
-    useEffect(() => {
-        if (loading === false) {
-            setColors([])
-            setImages([])
-            setProdName('')
-            setProdDescription('')
-            setPriceBefore('Price before discount')
-            setPriceAftr('Price after discount')
-            setQty('Available quantity')
-            SetBrandID(0)
-            setSeletedSubID([])
-            setTimeout(() => setLoading(true), 1500)
+  // Save updated data
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+    if (name.trim() === "") {
+      notify("Please enter a category name", "warn");
+      return;
+    }
+    const formData = new FormData();
+    formData.append("name", name);
+    if (selectedFile) {
+      formData.append("image", selectedFile);
+    }
+    setLoading(true);
+    setIsPress(true);
 
-            if (product) {
-                if (product.status === 200) {
-                    notify("Successfully updated", "success")
-                } else {
-                    notify("There is a problem", "error")
-                }
-            }
-        }
-    }, [loading])
+    try {
+      const response = await dispatch(updateCategory(categoryId, formData));
+      if (response?.payload?.status === 200) {
+        notify("Category updated successfully", "success");
+      } else {
+        notify("There was an issue updating the category", "error");
+      }
+    } catch (error) {
+      notify("Error updating category", "error");
+    } finally {
+      setLoading(false);
+      setTimeout(() => setIsPress(false), 1000);
+    }
+  };
 
-    return [CatID, BrandID, onChangeDesName, onChangeQty, onChangeColor, onChangePriceAfter, onChangePriceBefore, onChangeProdName, showColor, category, brand, priceAftr, images, setImages, onSelect, onRemove, options, handelChangeComplete, removeColor, onSeletCategory, handelSubmit, onSeletBrand, colors, priceBefore, qty, prodDescription, prodName]
-}
+  return [
+    img,
+    name,
+    loading,
+    isPress,
+    handleSubmit,
+    onImageChange,
+    onChangeName,
+  ];
+};
 
-export default AdminEditProductsHook
+export default AdminEditCategoriesHook;
