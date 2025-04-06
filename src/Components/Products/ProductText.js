@@ -13,59 +13,50 @@ const ProductText = () => {
   const [colorClick, indexColor, addToCartHandel] = AddToCartHook(id, item)
 
   return (
-    <div>
-      <Row className="mt-2">
-        <div className="cat-text">{cat.name} :</div>
-      </Row>
+    <div className="d-inline">
       <Row>
         <Col md="8">
-          <div className="cat-title d-inline">
+          <div className="card-title d-inline">
             {item.title}
-            <div className="cat-rate d-inline mx-3">{item.ratingsAverage}</div>
           </div>
         </Col>
       </Row>
-      <Row>
-        <Col md="8" className="mt-4">
-          <div className="cat-text d-inline">Brand :</div>
-          <div className="barnd-text d-inline mx-1">{brand.name} </div>
-        </Col>
-      </Row>
-      <Row>
-        <Col md="8" className="mt-1 d-flex">
-          {
-            item.availableColors ? (item.availableColors.map((color, index) => {
-              return (<div
-                key={index}
-                onClick={() => colorClick(index, color)}
-                className="color ms-2"
-                style={{ backgroundColor: color, border: indexColor === index ? '3px solid black' : 'none' }}></div>)
-            })) : null
-          }
-
-          <div className="cat-text d-inline">Available Quantity: {item.quantity} </div>
-
-        </Col>
-      </Row>
-
-      <Row className="mt-4">
-        <div className="cat-text">Specifications :</div>
-      </Row>
+      {/* <Row className="mt-4">
+        <div className="details-description">Description :</div>
+      </Row> */}
       <Row className="mt-2">
         <Col md="10">
-          <div className="product-description d-inline">
+          <div className="details-description d-inline">
             {item.description}
           </div>
         </Col>
       </Row>
       <Row className="mt-4">
-        <Col md="12">
-          {item.priceAfterDiscount >= 1 ? (
-            <div className="product-price d-inline px-3 py-3 border">
-              <span style={{ textDecorationLine: 'line-through' }}> {item.price}</span> {item.priceAfterDiscount} EGP
-            </div>) : <div className="product-price d-inline px-3 py-3 border"><span> {item.price}</span> EGP </div>
-          }
-          <div onClick={addToCartHandel} className="product-cart-add px-3 py-3 d-inline mx-3">Add to Cart</div>
+        <Col md="12" className="d-flex justify-content-between align-items-center">
+          <div className="d-flex">
+            <div className="d-flex">
+              <div className="card-price">
+                {item.priceAfterDiscount >= 1 ?
+                  (<div>{item.priceAfterDiscount}<span className="card-currency mx-1">EGP</span> <span style={{ textDecorationLine: 'line-through', color: "#979797", fontSize: "14px" }}>{item.price}</span> </div>)
+                  : item.price}
+              </div>
+            </div>
+          </div>
+          <div className="d-flex">
+            <div className="d-flex p-2 cart-icon-wrapper">
+              <span className="cart-icon mx-2">Add to Cart</span>
+              <svg className="cart-icon" width="20px" height="20px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <g id="SVGRepo_bgCarrier" strokeWidth="0" />
+                <g id="SVGRepo_tracerCarrier" strokeLinecap="round" strokeLinejoin="round" />
+                <g id="SVGRepo_iconCarrier">
+                  <path d="M3 6H22L19 16H6L3 6ZM3 6L2.25 3.5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                  <path d="M9.99219 11H11.9922M13.9922 11H11.9922M11.9922 11V9M11.9922 11V13" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                  <path d="M11 19.5C11 20.3284 10.3284 21 9.5 21C8.67157 21 8 20.3284 8 19.5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                  <path d="M17 19.5C17 20.3284 16.3284 21 15.5 21C14.6716 21 14 20.3284 14 19.5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                </g>
+              </svg>
+            </div>
+          </div>
         </Col>
       </Row>
       <ToastContainer />

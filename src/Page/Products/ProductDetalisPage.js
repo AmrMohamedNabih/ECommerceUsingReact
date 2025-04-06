@@ -25,8 +25,6 @@ const ProductDetalisPage = () => {
             <CategoryHeader />
             <Container>
                 <ProductDetalis />
-                <RateContainer rateAvg={rateAvg} rateQty={rateQty} />
-                <CardProductsContainer products={items} title="Products You Might Like" />
             </Container>
         </div>
     )

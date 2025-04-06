@@ -7,16 +7,16 @@ const ProductDetalis = () => {
    
     return (
         <div>
+            <div>
             <Row className='py-3'>
-                <Col lg="4">
-                    <ProductGallery  />
+                <Col lg="4" md="12">
+                    <ProductGallery />
                 </Col>
-
-                <Col lg="8">
-
-                    <ProductText  />
+                <Col lg="8" md="12" className="pt-24">
+                    <ProductText />
                 </Col>
             </Row>
+            </div>
         </div>
     )
 }

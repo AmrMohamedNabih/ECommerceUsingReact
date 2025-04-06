@@ -16,11 +16,9 @@ const HomePage = () => {
 
             <Silder />
             <HomeCategory />
-            <CardProductsContainer products={items} title="Best Sellers" btntitle="See More" pathText="/products" />
+            <CardProductsContainer products={items} title="Best Sellers"  />
             <DiscountSection />
-            <CardProductsContainer products={items} title="Latest Fashion" btntitle="See More" pathText="/products" />
-            <BrandFeatured title="Most Popular Brands" btntitle="See More" />
-
+            <CardProductsContainer products={items} title="Products" btntitle="See More" pathText="/products" />
         </div>
     )
 }

@@ -8,8 +8,6 @@ const Footer = () => {
             <Container className="">
                 <Row className="d-flex justify-content-between align-items-center">
                     <Col sm="6" className="d-flex align-items-center ">
-                        <div className="footer-text">Terms and Conditions</div>
-                        <div className="footer-text mx-2">Privacy Policy</div>
                         <div className="footer-text mx-2">Contact Us</div>
                     </Col>
                     <Col
@@ -21,10 +19,10 @@ const Footer = () => {
                                 <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round" />
                                 <g id="SVGRepo_iconCarrier"> <path d="M16.5562 12.9062L16.1007 13.359C16.1007 13.359 15.0181 14.4355 12.0631 11.4972C9.10812 8.55901 10.1907 7.48257 10.1907 7.48257L10.4775 7.19738C11.1841 6.49484 11.2507 5.36691 10.6342 4.54348L9.37326 2.85908C8.61028 1.83992 7.13596 1.70529 6.26145 2.57483L4.69185 4.13552C4.25823 4.56668 3.96765 5.12559 4.00289 5.74561C4.09304 7.33182 4.81071 10.7447 8.81536 14.7266C13.0621 18.9492 17.0468 19.117 18.6763 18.9651C19.1917 18.9171 19.6399 18.6546 20.0011 18.2954L21.4217 16.883C22.3806 15.9295 22.1102 14.2949 20.8833 13.628L18.9728 12.5894C18.1672 12.1515 17.1858 12.2801 16.5562 12.9062Z" fill="#979797" /> </g>
                             </svg>
-                            <p className="footer-phone pl-1">0122455346356</p>
+                            <p className="footer-phone pl-1">0123456789</p>
                         </div>
-                        <a href="https://www.instagram.com/dodos_bakes?igsh=MTgybTY5aDR1NTQ1NQ%3D%3D&utm_source=qr" className="cursor-pointer px-2 social-link">
-                            <svg width="20px" height="20px" viewBox="0 0 20 20" fill="#979797" stroke="#979797" xmlns="http://www.w3.org/2000/svg">
+                        <a href="https://www.instagram.com/dodos_bakes?igsh=MTgybTY5aDR1NTQ1NQ%3D%3D&utm_source=qr" className="cursor-pointer mx-2">
+                            <svg className="social-link" width="20px" height="20px" viewBox="0 0 20 20" fill="#979797" stroke="#979797" xmlns="http://www.w3.org/2000/svg">
                                 <g id="icons">
                                     <g id="SVGRepo_bgCarrier" stroke-width="0" />
                                     <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round" />
@@ -32,11 +30,11 @@ const Footer = () => {
                                 </g>
                             </svg>
                         </a>
-                        <a href="https://www.facebook.com/people/Dodos-bakes/61562015674334/?mibextid=wwXIfr&rdid=oqSPqcIyEm0tVH3N&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F19KeWE34mp%2F%3Fmibextid%3DwwXIfr" className="cursor-pointer px-2 social-link">
-                            <svg width="20px" height="20px" viewBox="0 0 24 24" fill="#979797" stroke="#979797" xmlns="http://www.w3.org/2000/svg">
-                                <g id="SVGRepo_bgCarrier" stroke-width="0" />
-                                <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round" />
-                                <g id="SVGRepo_iconCarrier"> <title>facebook [#176]</title> <desc>Created with Sketch.</desc> <defs> </defs> <g id="Page-1" stroke="none" stroke-width="1" fill="#979797" fill-rule="evenodd"> <g id="Dribbble-Light-Preview" transform="translate(-385.000000, -7399.000000)" fill="#979797"> <g id="icons" transform="translate(56.000000, 160.000000)"> <path d="M335.821282,7259 L335.821282,7250 L338.553693,7250 L339,7246 L335.821282,7246 L335.821282,7244.052 C335.821282,7243.022 335.847593,7242 337.286884,7242 L338.744689,7242 L338.744689,7239.14 C338.744689,7239.097 337.492497,7239 336.225687,7239 C333.580004,7239 331.923407,7240.657 331.923407,7243.7 L331.923407,7246 L329,7246 L329,7250 L331.923407,7250 L331.923407,7259 L335.821282,7259 Z" id="facebook-[#176]"> </path> </g> </g> </g> </g>
+                        <a href="https://www.facebook.com/people/Dodos-bakes/61562015674334/?mibextid=wwXIfr&rdid=oqSPqcIyEm0tVH3N&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F19KeWE34mp%2F%3Fmibextid%3DwwXIfr" className="cursor-pointer mx-2">
+                            <svg className="social-link" fill="#979797" width="26px" height="26px" viewBox="-5.5 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg">
+                                <g id="SVGRepo_bgCarrier" stroke-width="0"/>
+                                <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"/>
+                                <g id="SVGRepo_iconCarrier"> <title>facebook</title> <path d="M1.188 5.594h18.438c0.625 0 1.188 0.563 1.188 1.188v18.438c0 0.625-0.563 1.188-1.188 1.188h-18.438c-0.625 0-1.188-0.563-1.188-1.188v-18.438c0-0.625 0.563-1.188 1.188-1.188zM14.781 17.281h2.875l0.125-2.75h-3v-2.031c0-0.781 0.156-1.219 1.156-1.219h1.75l0.063-2.563s-0.781-0.125-1.906-0.125c-2.75 0-3.969 1.719-3.969 3.563v2.375h-2.031v2.75h2.031v7.625h2.906v-7.625z"/> </g>
                             </svg>
                         </a>
                     </Col>
