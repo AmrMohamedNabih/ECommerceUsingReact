@@ -4,7 +4,6 @@ import CardProductsContainer from '../../Components/Products/CardProductsContain
 import NavBarLogin from '../../Components/Uitily/NavBarLogin';
 import Silder from './../../Components/Home/Silder';
 import DiscountSection from './../../Components/Home/DiscountSection';
-import BrandFeatured from '../../Components/Brand/BrandFeatured';
 import Footer from '../../Components/Uitily/Footer';
 import ViewHomeProductsHook from './../../hook/products/view-home-products-hook';
 

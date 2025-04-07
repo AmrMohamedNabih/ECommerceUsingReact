@@ -18,41 +18,60 @@ const AdminAllProductsCard = ({ item }) => {
     }
 
     return (
-        <Col xs="12" sm="6" md="5" lg="4" className="d-flex">
+        <Col xs="12" sm="12" md="6" lg="4" className="d-flex">
             <Modal show={show} onHide={handleClose}>
                 <Modal.Header>
-                    <Modal.Title> <div className='font'>Confirm Deletion</div></Modal.Title>
+                    <Modal.Title>
+                        <div>Confirm Deletion</div>
+                    </Modal.Title>
                 </Modal.Header>
-                <Modal.Body><div className='font'>Are you sure you want to delete this product?</div></Modal.Body>
+                <Modal.Body>
+                    <div>
+                        Are you sure you want to delete this product?
+                    </div>
+                </Modal.Body>
                 <Modal.Footer>
-                    <Button className='font' variant="success" onClick={handleClose}>
+                    <Button className="btn-secondary" onClick={handleClose}>
                         Cancel
                     </Button>
-                    <Button className='font' variant="dark" onClick={handleDelete}>
+                    <Button className="btn-danger" onClick={handleDelete}>
                         Delete
                     </Button>
                 </Modal.Footer>
             </Modal>
 
-            <Card
-                className="my-2"
-                style={{
-                    width: "100%",
-                    height: "350px",
-                    borderRadius: "8px",
-                    border: "none",
-                    backgroundColor: "#FFFFFF",
-                }}>
+            <Card className="my-2 product-card-admin" style={{ backgroundColor: "rgba(239, 196, 195, 0.1)", borderRadius: "16px 16px 16px 16px" }}>
                 <Row className="d-flex justify-content-center px-2">
                     <Col className="d-flex justify-content-between">
-                        <div onClick={handleShow} className="d-inline item-delete-edit">Remove</div>
+                        <div onClick={handleShow} className="d-flex cursor-pointer m-2 icon-hover">
+                            <svg width="22px" height="22px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M10 11V17" stroke="#979797" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                                <path d="M14 11V17" stroke="#979797" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                                <path d="M4 7H20" stroke="#979797" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                                <path d="M6 7H12H18V18C18 19.6569 16.6569 21 15 21H9C7.34315 21 6 19.6569 6 18V7Z" stroke="#979797" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                                <path d="M9 5C9 3.89543 9.89543 3 11 3H13C14.1046 3 15 3.89543 15 5V7H9V5Z" stroke="#979797" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                            </svg>
+                        </div>
+
                         <Link to={`/admin/editproduct/${item._id}`} style={{ textDecoration: "none" }}>
-                            <div className="d-inline item-delete-edit">Edit</div>
+                            <div className="d-flex m-2 icon-hover">
+                                <svg width="20px" height="20px" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <title />
+                                    <g id="Complete">
+                                        <g id="edit">
+                                            <g>
+                                                <path d="M20,16v4a2,2,0,0,1-2,2H4a2,2,0,0,1-2-2V6A2,2,0,0,1,4,4H8" fill="none" stroke="#979797" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" />
+                                                <polygon fill="none" points="12.5 15.8 22 6.2 17.8 2 8.3 11.5 8 16 12.5 15.8" stroke="#979797" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" />
+                                            </g>
+                                        </g>
+                                    </g>
+                                </svg>
+                            </div>
                         </Link>
                     </Col>
                 </Row>
-                <Link to={`/products/${item._id}`} style={{ textDecoration: "none" }}>
-                    <Card.Img style={{ height: "228px", width: "100%" }} src={item.imageCover} />
+                <Link to={`/products/${item._id}`} style={{ textDecoration: 'none' }}>
+                    <Card.Img style={{ height: "180px", objectFit: 'cover', borderRadius: '10px' }} src={item.imageCover} />
                     <Card.Body>
                         <Card.Title>
                             <div className="card-title">
@@ -60,18 +79,26 @@ const AdminAllProductsCard = ({ item }) => {
                             </div>
                         </Card.Title>
                         <Card.Text>
-                            <div className="d-flex justify-content-between">
-                                <div className="card-rate">{item.ratingsQuantity}</div>
-                                <div className="d-flex">
-                                    <div className="card-price">
-                                        {item.priceAfterDiscount >= 1 ? (
-                                            <div>
-                                                <span style={{ textDecorationLine: 'line-through' }}>{item.price}</span> {item.priceAfterDiscount}
-                                            </div>
-                                        ) : item.price}
+                            <div className="card-text">
+                                {item.description}
+                            </div>
+                        </Card.Text>
+                        <Card.Text>
+                            <div className="card-price-admin">
+                                {item.priceAfterDiscount >= 1 ? (
+                                    <div>
+                                        <div>
+                                            <span>Price before discount: {item.price}</span>
+                                            <span className="mx-1">EGP</span>
+                                        </div>
+                                        <div>
+                                            <span>Price after discount: {item.priceAfterDiscount}</span>
+                                            <span className="mx-1">EGP</span>
+                                        </div>
                                     </div>
-                                    <div className="card-currency mx-1">EGP</div>
-                                </div>
+                                ) : (
+                                    <span>{item.price}</span>
+                                )}
                             </div>
                         </Card.Text>
                     </Card.Body>

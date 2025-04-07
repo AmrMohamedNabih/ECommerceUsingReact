@@ -69,7 +69,7 @@ const AdminAddProducts = () => {
                         name="cat"
                         onChange={onSeletCategory}
                         className="select input-form-area mt-3 px-2 ">
-                        <option value="0">Main Category</option>
+                        <option value="0">Category</option>
                         {
                             category.data ? (category.data.map((item, index) => {
                                 return (
@@ -78,53 +78,10 @@ const AdminAddProducts = () => {
                             })) : null
                         }
                     </select>
-
-                    <Multiselect
-                        className="mt-2 text-end"
-                        placeholder="Subcategory"
-                        options={options}
-                        onSelect={onSelect}
-                        onRemove={onRemove}
-                        displayValue="name"
-                        style={{ color: "red" }}
-                    />
-                    <select
-                        name="brand"
-                        onChange={onSeletBrand}
-                        className="select input-form-area mt-3 px-2 ">
-                        <option value="0">Choose Brand</option>
-                        {
-                            brand.data ? (brand.data.map((item, index) => {
-                                return (
-                                    <option key={index} value={item._id}>{item.name}</option>
-                                )
-                            })) : null
-                        }
-                    </select>
-                    <div className="text-form mt-3">Available Product Colors</div>
-                    <div className="mt-1 d-flex">
-                        {
-                            colors.length >= 1 ? (
-                                colors.map((color, index) => {
-                                    return (
-                                        <div key={index}
-                                            onClick={() => removeColor(color)}
-                                            className="color ms-2 border mt-1"
-                                            style={{ backgroundColor: color }}></div>
-                                    )
-                                })
-                            ) : null
-                        }
-
-                        <img onClick={onChangeColor} src={add} alt="" width="30px" height="35px" style={{ cursor: 'pointer' }} />
-                        {
-                            showColor === true ? <CompactPicker onChangeComplete={handelChangeComplete} /> : null
-                        }
-                    </div>
                 </Col>
             </Row>
             <Row>
-                <Col sm="8" className="d-flex justify-content-end">
+                <Col sm="8" className="d-flex mt-2 justify-content-end">
                     <button onClick={handelSubmit} className="btn-save d-inline mt-2">Save Changes</button>
                 </Col>
             </Row>

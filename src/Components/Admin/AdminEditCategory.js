@@ -45,7 +45,7 @@ const AdminEditCategories = () => {
           />
 
           <Row>
-            <Col sm="8" className="d-flex justify-content-end">
+            <Col sm="16" className="d-flex justify-content-end">
               <button onClick={handleSubmit} className="btn-save d-inline mt-2">
                 {loading ? "Saving..." : "Save Changes"}
               </button>

@@ -13,7 +13,7 @@ import AdminEditProductsHook from './../../hook/products/edit-products-hook';
 const AdminEditProducts = () => {
     const { id } = useParams();
 
-    const [CatID, BrandID, onChangeDesName, onChangeQty, onChangeColor, onChangePriceAfter, onChangePriceBefore, onChangeProdName, showColor, category, brand, priceAfter, images, setImages, onSelect, onRemove, options, handleChangeComplete, removeColor, onSelectCategory, handleSubmit, onSelectBrand, colors, priceBefore, qty, prodDescription, prodName] =
+    const [CatID, onChangeDesName, onChangeQty, onChangePriceAfter, onChangePriceBefore, onChangeProdName, category, priceAfter, images, setImages, onSelect, onRemove, options, handleChangeComplete, onSelectCategory, handleSubmit,  priceBefore, qty, prodDescription, prodName] =
         AdminEditProductsHook(id);
 
     return (
@@ -72,7 +72,7 @@ const AdminEditProducts = () => {
                         value={CatID}
                         onChange={onSelectCategory}
                         className="select input-form-area mt-3 px-2">
-                        <option value="0">Main Category</option>
+                        <option value="0">Category</option>
                         {
                             category.data ? (category.data.map((item) => {
                                 return (
@@ -82,49 +82,7 @@ const AdminEditProducts = () => {
                         }
                     </select>
 
-                    <Multiselect
-                        className="mt-2 text-end"
-                        placeholder="Subcategory"
-                        options={options}
-                        onSelect={onSelect}
-                        onRemove={onRemove}
-                        displayValue="name"
-                        style={{ color: "red" }}
-                    />
-                    <select
-                        name="brand"
-                        value={BrandID}
-                        onChange={onSelectBrand}
-                        className="select input-form-area mt-3 px-2">
-                        <option value="0">Select Brand</option>
-                        {
-                            brand.data ? (brand.data.map((item) => {
-                                return (
-                                    <option value={item._id}>{item.name}</option>
-                                )
-                            })) : null
-                        }
-                    </select>
-                    <div className="text-form mt-3">Available Product Colors</div>
-                    <div className="mt-1 d-flex">
-                        {
-                            colors.length >= 1 ? (
-                                colors.map((color, index) => {
-                                    return (
-                                        <div key={index}
-                                            onClick={() => removeColor(color)}
-                                            className="color ms-2 border mt-1"
-                                            style={{ backgroundColor: color }}></div>
-                                    )
-                                })
-                            ) : null
-                        }
-
-                        <img onClick={onChangeColor} src={add} alt="" width="30px" height="35px" style={{ cursor: 'pointer' }} />
-                        {
-                            showColor === true ? <CompactPicker onChangeComplete={handleChangeComplete} /> : null
-                        }
-                    </div>
+                    
                 </Col>
             </Row>
             <Row>

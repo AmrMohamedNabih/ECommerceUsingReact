@@ -20,21 +20,9 @@ const AdminSideBar = () => {
                         Manage Categories
                     </div>
                 </Link>
-                <Link to="/admin/addbrand" style={{ textDecoration: 'none' }}>
-                    <div className="admin-side-text my-1 border-bottom p-2 mx-auto text-center">
-                        Add Brand
-                    </div>
-                </Link>
-
                 <Link to="/admin/addcategory" style={{ textDecoration: 'none' }}>
                     <div className="admin-side-text my-1 border-bottom p-2 mx-auto text-center">
                         Add Category
-                    </div>
-                </Link>
-
-                <Link to="/admin/addsubcategory" style={{ textDecoration: 'none' }}>
-                    <div className="admin-side-text my-1 border-bottom p-2 mx-auto text-center">
-                        Add Subcategory
                     </div>
                 </Link>
                 <Link to="/admin/addproduct" style={{ textDecoration: 'none' }}>

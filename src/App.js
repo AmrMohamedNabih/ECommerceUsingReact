@@ -5,7 +5,6 @@ import Footer from "./Components/Uitily/Footer";
 import LoginPage from './Page/Auth/LoginPage';
 import RegisterPage from "./Page/Auth/RegisterPage";
 import AllCategoryPage from "./Page/Category/AllCategoryPage";
-import AllBrandPage from "./Page/Brand/AllBrandPage";
 import ShopProductsPage from "./Page/Products/ShopProductsPage";
 import ProductDetalisPage from "./Page/Products/ProductDetalisPage";
 import CartPage from "./Page/Cart/CartPage";
@@ -14,9 +13,7 @@ import AdminAllProductsPage from "./Page/Admin/AdminAllProductsPage";
 import AdminAllOrdersPage from "./Page/Admin/AdminAllOrdersPage";
 import AdminAllCategoriesPage from "./Page/Admin/AdminAllCategoriesPage";
 import AdminOrderDetalisPage from "./Page/Admin/AdminOrderDetalisPage";
-import AdminAddBrandPage from "./Page/Admin/AdminAddBrandPage";
 import AdminAddCategoryPage from "./Page/Admin/AdminAddCategoryPage";
-import AdminAddSubCategoryPage from "./Page/Admin/AdminAddSubCategoryPage";
 import AdminAddProductsPage from "./Page/Admin/AdminAddProductsPage";
 import UserAllOrdersPage from "./Page/User/UserAllOrdersPage";
 import UserFavoriteProductsPage from "./Page/User/UserFavoriteProductsPage";
@@ -50,7 +47,6 @@ function App() {
           <Route path="/login" element={<LoginPage />} />
           <Route path="/register" element={<RegisterPage />} />
           <Route path="/allcategory" element={<AllCategoryPage />} />
-          <Route path="/allbrand" element={<AllBrandPage />} />
           <Route path="/products" element={<ShopProductsPage />} />
           <Route path="/products/:id" element={<ProductDetalisPage />} />
           <Route path="/cart" element={<CartPage />} />
@@ -58,7 +54,6 @@ function App() {
           <Route path="/user/verify-code" element={<VerifyPasswordPage />} />
           <Route path="/user/reset-password" element={<RsetPasswordPage />} />
           <Route path="/products/category/:id" element={<ProductsByCategory />} />
-          <Route path="/products/brand/:id" element={<ProductsByBrand />} />
 
 
 
@@ -67,9 +62,7 @@ function App() {
             <Route path="/admin/allproducts" element={<AdminAllProductsPage />} />
             <Route path="/admin/allcategories" element={<AdminAllCategoriesPage />} />
             <Route path="/admin/orders/:id" element={<AdminOrderDetalisPage />} />
-            <Route path="/admin/addbrand" element={<AdminAddBrandPage />} />
             <Route path="/admin/addcategory" element={<AdminAddCategoryPage />} />
-            <Route path="/admin/addsubcategory" element={<AdminAddSubCategoryPage />} />
             <Route path="/admin/addproduct" element={<AdminAddProductsPage />} />
             <Route path="/admin/addcoupon" element={<AdminAddCouponPage />} />
             <Route path="/admin/editcoupon/:id" element={<AdminEditCouponPage />} />

@@ -18,98 +18,104 @@ const AdminOrderDetalis = () => {
 
             <UserAllOrderItem orderItem={orderData} />
 
-            <Row className="justify-content-center mt-4 user-data">
-                <Col xs="12" className=" d-flex">
-                    <div className="admin-content-text py-2">Customer Details</div>
-                </Col>
-                <Col xs="12" className="d-flex">
-                    <div
-                        style={{
-                            color: "#555550",
-                            fontFamily: "Almarai",
-                            fontSize: "16px",
-                        }}>
-                        Name:
-                    </div>
+            <Col sm="12">
+                <div className="order-details-body-admin my-2 d-flex p-4">
+                    <div className="w-100">
+                        <Row className="justify-content-center">
+                            <Col xs="12" className=" d-flex">
+                                <div className="admin-content-text py-2">Customer Details</div>
+                            </Col>
+                            <Col xs="12" className="d-flex">
+                                <div
+                                    style={{
+                                        color: "#555550",
+                                        fontFamily: "Almarai",
+                                        fontSize: "16px",
+                                    }}>
+                                    Name:
+                                </div>
 
-                    <div
-                        style={{
-                            color: "#979797",
-                            fontFamily: "Almarai",
-                            fontSize: "16px",
-                        }}
-                        className="mx-2">
-                        {orderData ? orderData.user ? orderData.user.name : '' : ''}
-                    </div>
-                </Col>
+                                <div
+                                    style={{
+                                        color: "#979797",
+                                        fontFamily: "Almarai",
+                                        fontSize: "16px",
+                                    }}
+                                    className="mx-2">
+                                    {orderData ? orderData.user ? orderData.user.name : '' : ''}
+                                </div>
+                            </Col>
 
-                <Col xs="12" className="d-flex">
-                    <div
-                        style={{
-                            color: "#555550",
-                            fontFamily: "Almarai",
-                            fontSize: "16px",
-                        }}>
-                        Phone Number:
-                    </div>
+                            <Col xs="12" className="d-flex">
+                                <div
+                                    style={{
+                                        color: "#555550",
+                                        fontFamily: "Almarai",
+                                        fontSize: "16px",
+                                    }}>
+                                    Phone Number:
+                                </div>
 
-                    <div
-                        style={{
-                            color: "#979797",
-                            fontFamily: "Almarai",
-                            fontSize: "16px",
-                        }}
-                        className="mx-2">
-                        {orderData ? orderData.user ? orderData.user.phone : '' : ''}
-                    </div>
-                </Col>
-                <Col xs="12" className="d-flex">
-                    <div
-                        style={{
-                            color: "#555550",
-                            fontFamily: "Almarai",
-                            fontSize: "16px",
-                        }}>
-                        Email:
-                    </div>
+                                <div
+                                    style={{
+                                        color: "#979797",
+                                        fontFamily: "Almarai",
+                                        fontSize: "16px",
+                                    }}
+                                    className="mx-2">
+                                    {orderData ? orderData.user ? orderData.user.phone : '' : ''}
+                                </div>
+                            </Col>
+                            <Col xs="12" className="d-flex">
+                                <div
+                                    style={{
+                                        color: "#555550",
+                                        fontFamily: "Almarai",
+                                        fontSize: "16px",
+                                    }}>
+                                    Email:
+                                </div>
 
-                    <div
-                        style={{
-                            color: "#979797",
-                            fontFamily: "Almarai",
-                            fontSize: "16px",
-                        }}
-                        className="mx-2">
-                        {orderData ? orderData.user ? orderData.user.email : '' : ''}
-                    </div>
-                </Col>
-                <div className="d-flex mt-2 justify-content-center">
-                    <div>
-                        <select
-                            name="pay"
-                            id="paid"
-                            onChange={onChangePaid}
-                            className="select input-form-area mt-1  text-center w-50">
-                            <option value="0">Payment</option>
-                            <option value="true">Completed</option>
-                            <option value="false">Not Completed</option>
-                        </select>
-                        <button onClick={changePayOrder} className="btn-a px-2 d-inline mx-1 ">Save</button>
-                    </div>
-                    <div>
-                        <select
-                            onChange={onChangeDeliver}
-                            name="deliver"
-                            id="deliver"
-                            className="select input-form-area mt-1  text-center  w-50">
-                            <option value="0">Delivery</option>
-                            <option value="true">Completed</option>
-                            <option value="false">Not Completed</option>
-                        </select>
-                        <button onClick={changeDeliverOrder} className="btn-a px-2 d-inline mx-1 ">Save</button>
+                                <div
+                                    style={{
+                                        color: "#979797",
+                                        fontFamily: "Almarai",
+                                        fontSize: "16px",
+                                    }}
+                                    className="mx-2">
+                                    {orderData ? orderData.user ? orderData.user.email : '' : ''}
+                                </div>
+                            </Col>
+                            <div className="d-flex mt-2 justify-content-center">
+                                <div>
+                                    <select
+                                        name="pay"
+                                        id="paid"
+                                        onChange={onChangePaid}
+                                        className="select input-form-area mt-1  text-center w-50">
+                                        <option value="0">Payment</option>
+                                        <option value="true">Completed</option>
+                                        <option value="false">Not Completed</option>
+                                    </select>
+                                    <button onClick={changePayOrder} className="btn-a px-2 d-inline mx-1 ">Save</button>
+                                </div>
+                                <div>
+                                    <select
+                                        onChange={onChangeDeliver}
+                                        name="deliver"
+                                        id="deliver"
+                                        className="select input-form-area mt-1  text-center  w-50">
+                                        <option value="0">Delivery</option>
+                                        <option value="true">Completed</option>
+                                        <option value="false">Not Completed</option>
+                                    </select>
+                                    <button onClick={changeDeliverOrder} className="btn-a px-2 d-inline mx-1 ">Save</button>
+                                </div>
+                            </div>
+                        </Row>
                     </div>
                 </div>
-            </Row>
+            </Col>
             <ToastContainer />
         </div>
     )

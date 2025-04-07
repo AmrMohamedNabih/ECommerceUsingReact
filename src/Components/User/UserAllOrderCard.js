@@ -8,21 +8,15 @@ const UserAllOrderCard = ({ item }) => {
             <Row className="d-flex mb-2">
                 <Col xs="3" md="2" className="d-flex justify-content-start">
                     <Link to={`/products/${item.product._id}`} style={{ textDecoration: 'none' }}>
-                        <img width="93px" height="120px" src={item.product.imageCover} alt="" />
+                        <img width="100px" height="120px" src={item.product.imageCover} alt="" />
                     </Link>
                 </Col>
                 <Col xs="8" md="6">
-                    <div className="d-inline pt-2 cat-title">
+                    <div className="d-inline pt-2 stat">
                         {item.product.title || ''}
                     </div>
-                    <div className="d-inline pt-2 cat-rate me-2">
-                        {item.product.ratingsAverage ? item.product.ratingsAverage : 0}
-                    </div>
-                    <div className="rate-count d-inline p-1 pt-2">
-                        ({`${item.product.ratingsQuantity || 0} Reviews`})
-                    </div>
-                    <div className="mt-3 d-flex">
-                        <div className="cat-text mt-1 d-inline">Quantity</div>
+                    <div className="d-flex">
+                        <div className="order-name d-inline">Quantity:</div>
                         <input
                             value={item.count}
                             className="mx-2"

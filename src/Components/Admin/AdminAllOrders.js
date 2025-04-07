@@ -9,7 +9,7 @@ const AdminAllOrders = () => {
 
     return (
         <div className="pt-10">
-            <div className='admin-content-text'>Manage All Orders</div>
+            <div className='admin-content-text pb-3'>Manage All Orders</div>
             <Row className='justify-content-start'>
 
                 {

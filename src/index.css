@@ -35,6 +35,13 @@ body {
   font-weight: bold;
 }
 
+.dropdown-menu {
+  top: 100% !important;
+  left: 0 !important;
+  transform: translateY(0) !important;
+  margin-top: 0.5rem;
+}
+
 
 .navbar-custom {
   background-color: #efc4c3;
@@ -152,6 +159,16 @@ body {
   box-shadow: 0 8px 16px rgba(239, 196, 195, 0.6);
 }
 
+.product-card-admin {
+  width: 100%;
+  height: 390px;
+  box-shadow: 0 2px 2px 0 #efc4c3;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  border-radius: 10px;
+}
+
 .card-img-top {
   height: 180px;
   object-fit: cover;
@@ -193,6 +210,13 @@ body {
   font-weight: bold;
 }
 
+.card-price-admin {
+  color: #979797;
+  font-family: Almarai;
+  font-size: 14px;
+  font-weight: 500;
+}
+
 .card-currency {
   color: #b0787b;
   font-family: Almarai;
@@ -207,6 +231,7 @@ body {
 
 }
 
+
 .cart-icon {
   color: #f9f6f6;
 }
@@ -218,6 +243,51 @@ body {
 
 .cart-icon-wrapper:hover .cart-icon {
   color: #b0787b;
+}
+
+.icon-hover {
+  transition: transform 0.2s ease, filter 0.2s ease;
+}
+
+.icon-hover:hover {
+  transform: scale(1.1);
+  filter: brightness(0.5);
+  cursor: pointer;
+}
+
+
+.category-card-admin {
+  width: 100%;
+  height: 300px;
+  box-shadow: 0 2px 2px 0 #efc4c3;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  border-radius: 10px;
+}
+
+.btn-delete {
+  background-color: #dc3545;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 6px;
+  transition: background-color 0.2s ease;
+}
+.btn-delete:hover {
+  background-color: #c82333;
+}
+
+.btn-cancel {
+  background-color: #979797;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 6px;
+  transition: background-color 0.2s ease;
+}
+.btn-cancel:hover {
+  background-color: #5a6268;
 }
 
 
@@ -369,6 +439,7 @@ body {
   color: #636262;
   text-align: left;
   flex-grow: 1;
+  white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
 }
@@ -390,7 +461,13 @@ body {
   font-family: Almarai;
   font-size: 14px;
   font-weight: normal;
-  text-align: right;
+}
+
+.order-name {
+  color: #555550;
+  font-family: Almarai;
+  font-size: 16px;
+  font-weight: normal;
 }
 
 .cat-rate {
@@ -400,7 +477,6 @@ body {
   font-weight: bold;
   letter-spacing: 0;
   line-height: 19px;
-  text-align: right;
 }
 
 .barnd-text {
@@ -530,15 +606,22 @@ body {
   height: 46px;
   width: 374px;
   border-radius: 9px;
-  border: none;
-  color: white;
-  background-color: #272727;
+  border: #b0787b 1px solid;
+  color: #f9f9f9;
+  background-color: #b0787b;
+
 }
 
 .btn-login:hover {
-  background-color: #b0787b;
-  color: white;
+  background-color: #f9f9f9;
+  border: #b0787b 1px solid;
+  color: #b0787b;
+  cursor: pointer;
+
 }
+
+
+
 
 /* end login and register */
 
@@ -562,7 +645,20 @@ body {
 }
 
 .cart-item-body-admin {
-  height: 130px;
+  height: 100%;
+  width: 100%;
+  border-radius: 20px;
+  background-color: #ffffff;
+}
+
+.cart-item-body-admin:hover {
+  border: 5px solid #efc4c3;
+  transition: background-color 0.3s ease;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.order-details-body-admin {
+  height: 100%;
   width: 100%;
   border-radius: 20px;
   background-color: #ffffff;
@@ -580,7 +676,7 @@ body {
 
 .copon-btn {
   cursor: pointer;
-  border: none;
+  border: #b0787b 1px solid;
   height: 46px;
   padding-top: 5px;
   border-radius: 5px !important;
@@ -588,17 +684,20 @@ body {
   padding-right: 10px;
   padding-left: 10px !important;
   border-radius: 0 !important;
-  background-color: #272727;
-  color: #ffff !important;
+  color: #f9f9f9;
+  background-color: #b0787b;
   font-family: "Almarai";
   font-size: 12px;
   font-weight: normal;
 }
 
 .copon-btn:hover {
-  background-color: #b0787b;
-  color: white;
+  background-color: #f9f9f9;
+  border: #b0787b 1px solid;
+  color: #b0787b;
+  cursor: pointer;
 }
+
 
 .cart-checkout {
   height: 250px;
@@ -639,12 +738,11 @@ body {
 .admin-content-text {
   color: #555550;
   font-family: Almarai;
-  font-size: 21px;
-  font-weight: 800;
-  letter-spacing: 0;
-  line-height: 28px;
+  font-size: 18px;
+  font-weight: 700;
   text-align: left;
 }
+
 
 .item-delete-edit {
   color: #979797;
@@ -662,7 +760,7 @@ body {
   font-size: 16px;
   letter-spacing: 0;
   line-height: 20px;
-  text-align: right;
+  text-align: left;
 }
 
 .input-form {
@@ -690,30 +788,42 @@ body {
 }
 
 .btn-save {
-  border: none;
-  color: white;
+  border: #b0787b 1px solid;
+  color: #f9f9f9;
+  background-color: #b0787b;
+  text-decoration: none;
+  text-align: center;
   height: 46px;
   width: 150px;
   border-radius: 9px;
-  background-color: #272727;
 }
 
 .btn-save:hover {
-  background-color: #b0787b;
-  color: white;
+  background-color: #f9f9f9;
+  border: #b0787b 1px solid;
+  color: #b0787b;
+  cursor: pointer;
+  border-radius: 14px;
 }
 
+
 .btn-a {
-  border: none;
-  color: white;
+  border: #b0787b 1px solid;
+  color: #f9f9f9;
+  background-color: #b0787b;
   height: 45px;
   border-radius: 9px;
-  background-color: #272727;
+  border: #b0787b 1px solid;
+
+  
 }
 
 .btn-a:hover {
-  background-color: #b0787b;
-  color: white;
+  background-color: #f9f9f9;
+  border: #b0787b 1px solid;
+  color: #b0787b;
+  cursor: pointer;
+
 }
 
 /* end admin  */
@@ -774,12 +884,12 @@ body {
 }
 
 .stat {
-  color: #979797;
-  font-family: Cairo;
+  color: #555550;
   font-size: 16px;
   letter-spacing: 0;
   line-height: 30px;
   text-align: right;
+  font-weight: 600;
 }
 
 /* end user order */
@@ -795,19 +905,24 @@ body {
 }
 
 .btn-add-address {
-  border: none;
   height: 50px;
   width: 100%;
-  color: white;
+  border: none;
+  border: #b0787b 1px solid;
+  color: #f9f9f9;
+  background-color: #b0787b;
   border-radius: 9px;
-  background-color: #272727;
 }
 
 
 .btn-add-address:hover {
-  background-color: #b0787b;
-  color: white;
+  background-color: #f9f9f9;
+  border: #b0787b 1px solid;
+  color: #b0787b;
+  cursor: pointer;
+
 }
+
 
 /* user address */
 
