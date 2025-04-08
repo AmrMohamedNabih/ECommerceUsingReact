@@ -6,7 +6,7 @@ import slider2 from "../../images/slider2.jpg";
 import slider3 from "../../images/slider3.jpg";
 import slider4 from "../../images/slider4.png";
 
-const Silder = () => {
+const Slider = () => {
     const [index, setIndex] = useState(0)
     const handleSelect = (selectedIndex) => {
         setIndex(selectedIndex)
@@ -16,8 +16,7 @@ const Silder = () => {
             <Carousel.Item className="" interval={2000}>
                 <div className="d-flex flex-row justify-content-center align-items-center">
                     <img
-                        style={{ height: "460px"}}
-                        className="w-full object-cover"
+                        className="slider-img"
                         src={slider1}
                         alt="first slide"
                     />
@@ -28,8 +27,7 @@ const Silder = () => {
             <Carousel.Item className="" interval={2000}>
                 <div className="d-flex flex-row justify-content-center align-items-center">
                     <img
-                        style={{ height: "460px"}}
-                        className="w-full object-cover"
+                        className="slider-img"
                         src={slider2}
                         alt="second slide"
                     />
@@ -41,8 +39,7 @@ const Silder = () => {
             <Carousel.Item className="" interval={2000}>
                 <div className="d-flex flex-row justify-content-center align-items-center">
                     <img
-                        style={{ height: "460px"}}
-                        className="w-full object-cover"
+                        className="slider-img"
                         src={slider3}
                         alt="third slide"
                     />
@@ -54,8 +51,7 @@ const Silder = () => {
             <Carousel.Item className="" interval={2000}>
                 <div className="d-flex flex-row justify-content-center align-items-center">
                     <img
-                        style={{ height: "460px"}}
-                        className="w-full object-cover"
+                        className="slider-img"
                         src={slider4}
                         alt="fourth slide"
                     />
@@ -67,4 +63,4 @@ const Silder = () => {
     )
 }
 
-export default Silder
+export default Slider

@@ -12,7 +12,7 @@ const ProductCard = ({ item, favProd }) => {
     const [removeToWishListData, addToWishListData, handelFav, favImg] = ProductCardHook(item, favProd)
 
     return (
-        <Col xs="6" sm="6" md="4" lg="3" className="d-flex">
+        <Col className="d-flex">
             <Card className="my-2 product-card" style={{ backgroundColor: "rgba(239, 196, 195, 0.1)", borderRadius: "16px 16px 16px 16px" }}>
                 <Link to={`/products/${item._id}`} style={{ textDecoration: 'none' }}>
                     <Card.Img style={{ height: "180px", objectFit: 'cover', borderRadius: '10px' }} src={item.imageCover} />

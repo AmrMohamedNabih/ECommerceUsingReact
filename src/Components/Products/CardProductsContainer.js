@@ -1,29 +1,44 @@
 import React, { useState, useEffect } from 'react'
-import { Container, Row } from 'react-bootstrap'
+import { Container, Row, Col } from 'react-bootstrap'
 import SubTiltle from '../Uitily/SubTiltle'
 import ProductCard from './ProductCard'
-import { useDispatch, useSelector } from 'react-redux';
-import { getProductWishList } from '../../redux/actions/wishListAction';
-import CardContainerHook from './../../hook/products/card-container-hook';
+import CardContainerHook from './../../hook/products/card-container-hook'
 
 const CardProductsContainer = ({ title, btntitle, pathText, products }) => {
+  const [favProd] = CardContainerHook()
+  const [displayProducts, setDisplayProducts] = useState([])
 
-    const [favProd] = CardContainerHook()
+  useEffect(() => {
+    const updateDisplayProducts = () => {
+      if (products && products.length > 0) {
+        const shuffled = [...products].sort(() => 0.5 - Math.random())
+        const isMobile = window.innerWidth < 576
+        const count = isMobile ? 2 : 4
+        setDisplayProducts(shuffled.slice(0, count))
+      }
+    }
 
-    return (
-        <Container>
-            {products ? (<SubTiltle title={title} btntitle={btntitle} pathText={pathText} />) : null}
-            <Row className='my-2 d-flex'>
-                {
-                    products ? (
-                        products.map((item, index) => <ProductCard favProd={favProd} key={index} item={item} />)
-                    ) : null
+    updateDisplayProducts()
+    window.addEventListener('resize', updateDisplayProducts)
 
-                }
+    // Cleanup listener on unmount
+    return () => window.removeEventListener('resize', updateDisplayProducts)
+  }, [products])
 
-            </Row>
-        </Container>
-    )
+  return (
+    <Container>
+      {products ? (
+        <SubTiltle title={title} btntitle={btntitle} pathText={pathText} />
+      ) : null}
+      <Row className='my-2 d-flex'>
+        {displayProducts.map((item, index) => (
+          <Col key={index} xs={12} md={3}>
+            <ProductCard favProd={favProd} item={item} />
+          </Col>
+        ))}
+      </Row>
+    </Container>
+  )
 }
 
 export default CardProductsContainer

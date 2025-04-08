@@ -7,9 +7,9 @@ import { ToastContainer } from 'react-toastify';
 const LoginPage = () => {
     const [email, password, loading, onChangeEmail, onChangePassword, onSubmit, isPress] = LoginHook();
     return (
-        <Container style={{ minHeight: "690px" }}>
-            <Row className="py-5 d-flex justify-content-center ">
-                <Col sm="12" className="d-flex flex-column ">
+        <Container style={{ minHeight: "300px" }}>
+            <Row className="py-5 px-2 d-flex justify-content-center">
+                <Col sm="12" md="6" lg="4" className="d-flex flex-column">
                     <label className="mx-auto title-login">Login</label>
                     <input
                         value={email}
@@ -26,17 +26,17 @@ const LoginPage = () => {
                         className="user-input text-center mx-auto"
                     />
                     <button onClick={onSubmit} className="btn-login mx-auto mt-4">Login</button>
-                    <label className="mx-auto my-4">
+                    <label className="mx-auto my-4 footer-phone">
                         Don't have an account?{" "}
                         <Link to="/register" style={{ textDecoration: 'none' }}>
-                            <span style={{ cursor: "pointer" }} className="text-danger">
+                            <span style={{ cursor: "pointer" }} className="auth-text">
                                 Click here
                             </span>
                         </Link>
                     </label>
 
-                    <label className="mx-auto my-4">
-                        <Link to="/user/forget-password" style={{ textDecoration: 'none', color: 'red' }}>
+                    <label className="mx-auto footer-phone">
+                        <Link to="/user/forget-password" style={{ textDecoration: 'none' }} className="auth-text">
                             Forgot Password?
                         </Link>
                     </label>
