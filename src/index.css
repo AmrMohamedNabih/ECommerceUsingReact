@@ -968,6 +968,7 @@ body {
   letter-spacing: 0;
   line-height: 28px;
   text-align: right;
+  font-style: italic;
 }
 
 .btn-login {

@@ -10,7 +10,7 @@ const RegisterPage = () => {
   return (
     <Container fluid className="auth-background">
       <Row className="py-5 px-2 d-flex justify-content-center hieght-search">
-        <Col sm="12" md="6" lg="4" className="d-flex flex-column ">
+        <Col sm="12" md="6" lg="4" className="d-flex flex-column" style={{border: '3px solid #efc4c3', borderRadius:'10px' , padding:'20px' ,backgroundColor: '#ffffff'}}>
           <label className="mx-auto title-login">Create a New Account</label>
           <input
             value={name}
