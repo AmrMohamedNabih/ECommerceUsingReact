@@ -13,9 +13,9 @@ const ProductDetalisPage = () => {
         if (prod)
             var items = prod.slice(0, 4)
     } catch (e) { }
-    
+
     return (
-        <div style={{ minHeight: '670px' }}>
+        <div style={{ minHeight: '600px' }}>
             <CategoryHeader />
             <Container>
                 <ProductDetalis />
