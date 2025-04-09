@@ -1,6 +1,8 @@
 import React from 'react'
 import { Row, Col } from 'react-bootstrap'
 import UserAllOrderCard from './UserAllOrderCard'
+import { Link } from 'react-router-dom'
+
 
 const UserAllOrderItem = ({ orderItem }) => {
     const formatDate = (dateString) => {
@@ -9,10 +11,10 @@ const UserAllOrderItem = ({ orderItem }) => {
     }
 
     return (
-        <Col sm="12">
+        <Col sm="12" className="mb-3">
             <div className="order-details-body-admin my-2 d-flex p-4">
                 <div className="w-100">
-                    <Row className="mb-3">
+                    <Row className="mb-2">
                         <Col>
                             <div className="d-inline card-price">
                                 Order No. #{orderItem.id || 0} - Placed on {formatDate(orderItem.createdAt)}

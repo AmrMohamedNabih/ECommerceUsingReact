@@ -1,30 +1,33 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 
 const UserSideBar = () => {
+
+    const location = useLocation();
+
     return (
         <div className="sidebar">
-            <div className="d-flex flex-column">
-                <Link to="/user/allorders" style={{ textDecoration: 'none' }}>
-                    <div className="admin-side-text mt-3 border-bottom p-2 mx-auto text-center">
-                        Manage Orders
-                    </div>
-                </Link>
-                <Link to="/user/favoriteproducts" style={{ textDecoration: 'none' }}>
-                    <div className="admin-side-text my-1 border-bottom p-2 mx-auto text-center">
-                        Favorite Products
-                    </div>
-                </Link>
-                <Link to="/user/addresses" style={{ textDecoration: 'none' }}>
-                    <div className="admin-side-text my-1 border-bottom p-2 mx-auto text-center">
-                        Personal Addresses
-                    </div>
-                </Link>
-                <Link to="/user/profile" style={{ textDecoration: 'none' }}>
-                    <div className="admin-side-text my-1 border-bottom p-2 mx-auto text-center">
+            <div className="d-flex py-3">
+                <Link to="/user/profile" style={{ textDecoration: 'none' }} className='m-2'>
+                    <div className={`admin-side-text border-bottom p-2 mx-auto text-center ${location.pathname === '/user/profile' ? 'active-sidebar-item' : ''}`}>
                         Profile
                     </div>
                 </Link>
+                <Link to="/user/addresses" style={{ textDecoration: 'none' }} className='m-2'>
+                    <div className={`admin-side-text border-bottom p-2 mx-auto text-center ${location.pathname === '/user/addresses' ? 'active-sidebar-item' : ''}`}>
+                        Personal Addresses
+                    </div>
+                </Link>
+                <Link to="/user/allorders" style={{ textDecoration: 'none' }} className='m-2'>
+                    <div className={`admin-side-text border-bottom p-2 mx-auto text-center ${location.pathname === '/user/allorders' ? 'active-sidebar-item' : ''}`}>
+                        Manage Orders
+                    </div>
+                </Link>
+                {/* <Link to="/user/favoriteproducts" style={{ textDecoration: 'none' }} className='m-2'>
+                    <div className={`admin-side-text border-bottom p-2 mx-auto text-center ${location.pathname === '/user/favoriteproducts' ? 'active-sidebar-item' : ''}`}>
+                        Favorite Products
+                    </div>
+                </Link> */}
             </div>
         </div>
     );

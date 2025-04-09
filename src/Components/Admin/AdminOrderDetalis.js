@@ -86,32 +86,39 @@ const AdminOrderDetalis = () => {
                                     {orderData ? orderData.user ? orderData.user.email : '' : ''}
                                 </div>
                             </Col>
-                            <div className="d-flex mt-2 justify-content-center">
-                                <div>
+                            <div className="d-flex mt-2 justify-content-center flex-column flex-md-row">
+                                <div className="mb-2 mb-md-0">
                                     <select
                                         name="pay"
                                         id="paid"
                                         onChange={onChangePaid}
-                                        className="select input-form-area mt-1  text-center w-50">
-                                        <option value="0">Payment</option>
+                                        className="select input-form-area mt-1 text-center w-50"
+                                    >
+                                        <option disabled value="0">Payment</option>
                                         <option value="true">Completed</option>
                                         <option value="false">Not Completed</option>
                                     </select>
-                                    <button onClick={changePayOrder} className="btn-a px-2 d-inline mx-1 ">Save</button>
+                                    <button onClick={changePayOrder} className="btn-a px-2 d-inline mx-1">
+                                        Save
+                                    </button>
                                 </div>
                                 <div>
                                     <select
                                         onChange={onChangeDeliver}
                                         name="deliver"
                                         id="deliver"
-                                        className="select input-form-area mt-1  text-center  w-50">
-                                        <option value="0">Delivery</option>
+                                        className="select input-form-area mt-1 text-center w-50"
+                                    >
+                                        <option disabled value="0">Delivery</option>
                                         <option value="true">Completed</option>
                                         <option value="false">Not Completed</option>
                                     </select>
-                                    <button onClick={changeDeliverOrder} className="btn-a px-2 d-inline mx-1 ">Save</button>
+                                    <button onClick={changeDeliverOrder} className="btn-a px-2 d-inline mx-1">
+                                        Save
+                                    </button>
                                 </div>
                             </div>
+
                         </Row>
                     </div>
                 </div>

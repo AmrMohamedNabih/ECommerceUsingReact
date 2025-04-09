@@ -9,7 +9,7 @@ const UserAllOrder = () => {
 
     return (
         <div>
-            <div className="admin-content-text pb-4">Total Orders: #{results}</div>
+            <div className="admin-content-text pt-4">Total Orders: #{results}</div>
             <Row className='justify-content-between'>
                 {
                     orderData.length >= 1 ? (

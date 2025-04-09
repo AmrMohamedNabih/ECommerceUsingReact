@@ -23,6 +23,12 @@ body::-webkit-scrollbar-thumb {
   }
 }
 
+html, body, #root {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
 body {
   margin: 0;
   font-family: "Almarai", sans-serif;
@@ -644,6 +650,8 @@ body {
   text-align: right;
   margin-top: 10px;
   margin-bottom: 10px;
+  justify-content: start;
+
 
 }
 
@@ -652,6 +660,8 @@ body {
   align-items: center;
   margin-top: 10px;
   margin-bottom: 10px;
+  justify-content: end;
+
 }
 
 .footer-social-text {
@@ -1337,24 +1347,42 @@ body {
 }
 
 .btn-add-address {
-  height: 50px;
-  width: 100%;
-  border: none;
   border: #b0787b 1px solid;
   color: #f9f9f9;
   background-color: #b0787b;
+  text-decoration: none;
+  text-align: center;
+  height: 46px;
+  width: 150px;
   border-radius: 9px;
 }
-
 
 .btn-add-address:hover {
   background-color: #f9f9f9;
   border: #b0787b 1px solid;
   color: #b0787b;
   cursor: pointer;
-
+  border-radius: 14px;
 }
 
+.btn-edit-address {
+  border: #b0787b 1px solid;
+  color: #f9f9f9;
+  background-color: #b0787b;
+  text-decoration: none;
+  text-align: center;
+  height: 46px;
+  width: 250px;
+  border-radius: 9px;
+}
+
+.btn-edit-address:hover {
+  background-color: #f9f9f9;
+  border: #b0787b 1px solid;
+  color: #b0787b;
+  cursor: pointer;
+  border-radius: 14px;
+}
 
 /* user address */
 

@@ -8,8 +8,8 @@ const UserAddAddress = () => {
 
     return (
         <div>
-            <Row className="justify-content-start">
-                <div className="admin-content-text pb-2">Add New Address</div>
+            <Row className="justify-content-start pt-4">
+                <div className="admin-content-text">Add New Address</div>
                 <Col sm="8">
                     <input
                         value={alias}
@@ -37,7 +37,7 @@ const UserAddAddress = () => {
             </Row>
             <Row>
                 <Col sm="8" className="d-flex justify-content-end">
-                    <button onClick={onSubmit} className="btn-save d-inline mt-2">Add Address</button>
+                    <button onClick={onSubmit} className="btn-save d-inline my-3">Add Address</button>
                 </Col>
             </Row>
             <ToastContainer />

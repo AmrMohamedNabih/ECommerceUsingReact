@@ -9,12 +9,12 @@ const UserProfile = () => {
 
     return (
         <div>
-            <div className="admin-content-text">Profile Page</div>
+            <div className="admin-content-text pt-4">Profile Page</div>
 
             <Modal show={show} onHide={handleClose}>
                 <Modal.Header>
                     <Modal.Title>
-                        <div className="font">Edit Personal Information</div>
+                        <div>Edit Personal Information</div>
                     </Modal.Title>
                 </Modal.Header>
                 <Modal.Body>
@@ -41,32 +41,36 @@ const UserProfile = () => {
                     />
                 </Modal.Body>
                 <Modal.Footer>
-                    <Button className="font" variant="success" onClick={handleClose}>
+                    <Button className="btn-secondary" onClick={handleClose}>
                         Cancel
                     </Button>
-                    <Button className="font" variant="dark" onClick={handelSubmit}>
+                    <Button className="btn-success" style={{ backgroundColor: '#b0787b' }} onClick={handelSubmit}>
                         Save Changes
                     </Button>
                 </Modal.Footer>
             </Modal>
 
-            <div className="user-address-card my-3 px-2">
+            <div className="user-address-card my-2 px-3 py-2">
                 <Row className="d-flex justify-content-between pt-2">
                     <Col xs="6" className="d-flex">
                         <div className="p-2">Name:</div>
                         <div className="p-1 item-delete-edit">{user.name}</div>
                     </Col>
                     <Col xs="6" className="d-flex justify-content-end">
-                        <div onClick={handleShow} className="d-flex mx-2">
-                            <img
-                                alt=""
-                                className="ms-1 mt-2"
-                                src={deleteicon}
-                                height="17px"
-                                width="15px"
-                            />
-                            <p className="item-delete-edit">Edit</p>
+                        <div onClick={handleShow} className="d-flex mx-2 icon-hover">
+                            <svg width="20px" height="20px" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <title />
+                                <g id="Complete">
+                                    <g id="edit">
+                                        <g>
+                                            <path d="M20,16v4a2,2,0,0,1-2,2H4a2,2,0,0,1-2-2V6A2,2,0,0,1,4,4H8" fill="none" stroke="#979797" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" />
+                                            <polygon fill="none" points="12.5 15.8 22 6.2 17.8 2 8.3 11.5 8 16 12.5 15.8" stroke="#979797" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" />
+                                        </g>
+                                    </g>
+                                </g>
+                            </svg>
                         </div>
+
                     </Col>
                 </Row>
 
@@ -82,9 +86,9 @@ const UserProfile = () => {
                         <div className="p-1 item-delete-edit">{user.email}</div>
                     </Col>
                 </Row>
-                <Row className="mt-5">
-                    <Col xs="10" sm="8" md="6">
-                        <div className="admin-content-text">Change Password</div>
+                <Row className="mt-3">
+                    <Col xs="12" sm="8" md="6">
+                        <div className="admin-content-text my-1">Change Password</div>
                         <input
                             value={oldPassword}
                             onChange={onChangeOldPass}
@@ -110,7 +114,7 @@ const UserProfile = () => {
                 </Row>
 
                 <Row>
-                    <Col xs="10" sm="8" md="6" className="d-flex justify-content-end">
+                    <Col xs="10" sm="8" md="6" className="d-flex justify-content-start my-3">
                         <button onClick={changePassword} className="btn-save d-inline mt-2">
                             Save Password
                         </button>

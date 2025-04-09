@@ -5,14 +5,14 @@ import UserSideBar from '../../Components/User/UserSideBar'
 import UserAddAddress from '../../Components/User/UserAddAddress';
 const UserAddAddressPage = () => {
     return (
-        <Container >
-            <Row className='py-3'>
-                <Col sm="3" xs="2" md="2">
+        <Container fluid className="px-10">
+            <Row className='py-3 flex-column flex-sm-row'>
+                <Col sm="3" xs="12" md="3">
                     <UserSideBar />
                 </Col>
 
-                <Col sm="9" xs="10" md="10">
-                  <UserAddAddress />
+                <Col sm="9" xs="12" md="9">
+                    <UserAddAddress />
                 </Col>
             </Row>
         </Container>

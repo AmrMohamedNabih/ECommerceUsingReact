@@ -8,14 +8,14 @@ import UserSideBar from '../../Components/User/UserSideBar'
 import UserAllOrder from '../../Components/User/UserAllOrder'
 const UserAllOrdersPage = () => {
     return (
-        <Container >
-            <Row className='py-3'>
-                <Col sm="3" xs="2" md="2">
+        <Container fluid className="px-10">
+            <Row className='py-3 flex-column flex-sm-row'>
+                <Col sm="3" xs="12" md="3">
                     <UserSideBar />
                 </Col>
 
-                <Col sm="9" xs="10" md="10">
-                  <UserAllOrder />
+                <Col sm="9" xs="12" md="9">
+                    <UserAllOrder />
                 </Col>
             </Row>
         </Container>

@@ -10,8 +10,8 @@ const UserEditAddress = () => {
 
     return (
         <div>
-            <Row className="justify-content-start">
-                <div className="admin-content-text pb-2">Edit Address</div>
+            <Row className="justify-content-start pt-4">
+                <div className="admin-content-text">Edit Address</div>
                 <Col sm="8">
                     <input
                         value={alias}
@@ -39,7 +39,7 @@ const UserEditAddress = () => {
             </Row>
             <Row>
                 <Col sm="8" className="d-flex justify-content-end">
-                    <button onClick={handleEdit} className="btn-save d-inline mt-2">Save Address Changes</button>
+                    <button onClick={handleEdit} className="btn-edit-address d-inline my-3">Save Address Changes</button>
                 </Col>
             </Row>
             <ToastContainer />

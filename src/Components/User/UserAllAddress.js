@@ -10,7 +10,7 @@ const UserAllAddress = () => {
 
     return (
         <div>
-            <div className="admin-content-text pb-4">Address Book</div>
+            <div className="admin-content-text pt-4">Address Book</div>
             {
                 res.data ? (
                     res.data.map((item, index) => {
