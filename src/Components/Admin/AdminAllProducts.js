@@ -5,7 +5,7 @@ import AdminAllProductsCard from './AdminAllProductsCard'
 const AdminAllProducts = ({ products }) => {
    
     return (
-        <div className="pt-10">
+        <div className="pt-3">
             <div className='admin-content-text pb-2'>Manage All Products</div>
             <Row className='justify-content-start'>
                 {

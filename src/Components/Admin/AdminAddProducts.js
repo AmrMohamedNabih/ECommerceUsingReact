@@ -15,7 +15,7 @@ const AdminAddProducts = () => {
         AdminAddProductsHook();
         
     return (
-        <div className="pt-10">
+        <div className="pt-3">
             <Row className="justify-content-start">
                 <div className="admin-content-text pb-4">Add New Product</div>
                 <Col sm="8">

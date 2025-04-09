@@ -15,7 +15,7 @@
 //     else
 //         pageCount = 0;
 
-   
+
 
 //     return (
 //         <Container >
@@ -51,12 +51,13 @@ const AdminAllCategoriesPage = () => {
   const pageCount = pagination || 0;
 
   return (
-    <Container>
-      <Row className="py-3">
-        <Col sm="3" xs="2" md="2">
+    <Container fluid className="px-10">
+      <Row className='py-3 flex-column flex-sm-row'>
+        <Col sm="3" xs="12" md="3">
           <AdminSideBar />
         </Col>
-        <Col sm="9" xs="10" md="10">
+
+        <Col sm="9" xs="12" md="9">
           <AdminAllCategories categories={items} />
           {pageCount > 1 && <Pagination pageCount={pageCount} onPress={onPress} />}
         </Col>

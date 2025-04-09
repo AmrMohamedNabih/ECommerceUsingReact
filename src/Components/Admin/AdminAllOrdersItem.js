@@ -6,7 +6,7 @@ const AdminAllOrdersItem = ({ orderItem }) => {
 
     console.log(orderItem)
     return (
-        <Col sm="12">
+        <Col sm="12" className="mb-3">
             <Link to={`/admin/orders/${orderItem._id}`} className="cart-item-body-admin mt-2 mb-4 d-flex p-4" style={{ textDecoration: "none" }}>
                 <div className="w-100">
                     <Row className="mb-2">
@@ -19,8 +19,8 @@ const AdminAllOrdersItem = ({ orderItem }) => {
                     </Row>
                     <Row className="mb-3">
                         <Col>
-                            <div className="fw-semibold order-name">Order from: <span className="text-dark">{orderItem.user.name || ''}</span></div>
-                            <div className="text-muted small">{orderItem.user.email || ''}</div>
+                            <div className="fw-semibold order-name">Order from: <span className="text-dark">{orderItem.user?.name || ''}</span></div>
+                            <div className="text-muted small">{orderItem.user?.email || ''}</div>
                         </Col>
                     </Row>
 

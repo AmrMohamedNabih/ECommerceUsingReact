@@ -7,12 +7,12 @@ import VerifyPasswordHook from '../../hook/auth/verify-password-hook';
 
 const VerifyPasswordPage = () => {
 
-    const  [code, OnChangeCode, onSubmit] = VerifyPasswordHook()
+    const [code, OnChangeCode, onSubmit] = VerifyPasswordHook()
 
     return (
-        <Container style={{ minHeight: "690px" }}>
-            <Row className="py-5 d-flex justify-content-center ">
-                <Col sm="12" className="d-flex flex-column ">
+        <Container fluid className="forgot-background">
+            <Row className="my-3 py-5 px-2 d-flex justify-content-center">
+                <Col sm="12" md="6" lg="4" className="d-flex flex-column ">
                     <label className="mx-auto title-login">Enter the code sent to your email</label>
                     <input
                         value={code}

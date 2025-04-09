@@ -8,7 +8,7 @@ const AdminAllOrders = () => {
     const [userName, results, paginate, orderData, onPress] = UserGetAllOrderHook()
 
     return (
-        <div className="pt-10">
+        <div className="pt-3">
             <div className='admin-content-text pb-3'>Manage All Orders</div>
             <Row className='justify-content-start'>
 

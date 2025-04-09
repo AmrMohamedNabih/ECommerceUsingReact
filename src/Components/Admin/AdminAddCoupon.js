@@ -9,7 +9,7 @@ const AdminAddCoupon = () => {
     const [coupnName, couponDate, couponValue, onChangeName, onChangeDate, onChangeValue, onSubmit, coupons] = AddCouponHook();
     
     return (
-        <div className="pt-10">
+        <div className="pt-3">
             <Row className="justify-content-start">
                 <div className="admin-content-text pb-4">Add New Coupon</div>
                 <Col sm="8">

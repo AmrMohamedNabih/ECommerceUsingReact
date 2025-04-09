@@ -6,8 +6,10 @@ import { Link } from 'react-router-dom';
 
 import { ToastContainer } from 'react-toastify';
 import ProductCardHook from './../../hook/products/product-card-hook';
+import AddToCartHook from './../../hook/cart/add-to-cart-hook';
 
 const ProductCard = ({ item, favProd }) => {
+    const [colorClick, indexColor, addToCartHandle] = AddToCartHook(item, favProd)
 
     const [removeToWishListData, addToWishListData, handelFav, favImg] = ProductCardHook(item, favProd)
 
@@ -41,7 +43,7 @@ const ProductCard = ({ item, favProd }) => {
                             </div>
                         </div>
                         <div className="d-flex">
-                            <div className="d-flex p-2 cart-icon-wrapper">
+                            <div className="d-flex p-2 cart-icon-wrapper" onClick={addToCartHandle}>
                                 <svg className="cart-icon" width="20px" height="20px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <g id="SVGRepo_bgCarrier" strokeWidth="0" />
                                     <g id="SVGRepo_tracerCarrier" strokeLinecap="round" strokeLinejoin="round" />

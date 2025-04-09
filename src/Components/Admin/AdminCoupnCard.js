@@ -10,19 +10,24 @@ const AdminCouponCard = ({ coupon }) => {
         <div className="user-address-card my-3 px-3 py-3">
             <Modal show={show} onHide={handleClose}>
                 <Modal.Header>
-                    <Modal.Title> <div className='font'>Confirm Deletion</div></Modal.Title>
+                    <Modal.Title>
+                        <div>Confirm Deletion</div>
+                    </Modal.Title>
                 </Modal.Header>
-                <Modal.Body><div className='font'>Are you sure you want to delete this coupon?</div></Modal.Body>
+                <Modal.Body>
+                    <div>
+                        Are you sure you want to delete this product?
+                    </div>
+                </Modal.Body>
                 <Modal.Footer>
-                    <Button className='font' variant="success" onClick={handleClose}>
+                    <Button className="btn-secondary" onClick={handleClose}>
                         Cancel
                     </Button>
-                    <Button className='font' variant="dark" onClick={handleDelete}>
+                    <Button className="btn-danger" onClick={handleDelete}>
                         Delete
                     </Button>
                 </Modal.Footer>
             </Modal>
-
             <Row className="d-flex justify-content-between">
                 <Col xs="6">
                     <div className="px-2 font-bold">Coupon Name: {coupon.name}</div>

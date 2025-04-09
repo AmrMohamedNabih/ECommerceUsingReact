@@ -4,7 +4,7 @@ import AdminAllCategoriesCard from "./AdminAllCategoriesCard";
 
 const AdminAllCategories = ({ categories }) => {
   return (
-    <div className="pt-10">
+    <div className="pt-3">
       <div className="admin-content-text pb-2">Manage All Categories</div>
       <Row className="justify-content-start">
         {categories ? (

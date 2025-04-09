@@ -10,7 +10,7 @@ import AddToCartHook from './../../hook/cart/add-to-cart-hook';
 const ProductText = () => {
   const { id } = useParams();
   const [item, images, cat, brand] = ViewProductsDetalisHook(id);
-  const [colorClick, indexColor, addToCartHandel] = AddToCartHook(id, item)
+  const [colorClick, indexColor, addToCartHandle] = AddToCartHook(id, item)
 
   return (
     <div className="d-inline">
@@ -43,7 +43,7 @@ const ProductText = () => {
             </div>
           </div>
           <div className="d-flex">
-            <div className="d-flex p-2 cart-icon-wrapper">
+            <div className="d-flex p-2 cart-icon-wrapper" onClick={addToCartHandle}>
               <span className="cart-icon mx-2">Add to Cart</span>
               <svg className="cart-icon" width="20px" height="20px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <g id="SVGRepo_bgCarrier" strokeWidth="0" />

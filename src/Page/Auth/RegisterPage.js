@@ -8,7 +8,7 @@ const RegisterPage = () => {
   const [name, email, phone, password, confirmPassword, loading, onChangeName, onChangeEmail, onChangePhone, onChangePassword, onChangeConfirmPassword, OnSubmit] = RegisterHook();
 
   return (
-    <Container style={{ minHeight: "300px" }}>
+    <Container fluid className="auth-background">
       <Row className="py-5 px-2 d-flex justify-content-center hieght-search">
         <Col sm="12" md="6" lg="4" className="d-flex flex-column ">
           <label className="mx-auto title-login">Create a New Account</label>
@@ -48,10 +48,10 @@ const RegisterPage = () => {
             className="user-input text-center mt-3 mx-auto"
           />
           <button onClick={OnSubmit} className="btn-login mx-auto mt-4">Register Account</button>
-          <label className="mx-auto my-4 footer-phone">
+          <label className="mx-auto mt-4" style={{fontSize:'13px'}}>
             Already have an account?{" "}
             <Link to="/login" style={{ textDecoration: "none" }}>
-              <span style={{ cursor: "pointer" }} className="nav-text">
+              <span style={{ cursor: "pointer" }} className="auth-text">
                 Click here
               </span>
             </Link>

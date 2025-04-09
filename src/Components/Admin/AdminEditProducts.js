@@ -18,7 +18,7 @@ const AdminEditProducts = () => {
 
     return (
         <div>
-            <Row className="justify-content-start pt-10">
+            <Row className="justify-content-start pt-3">
                 <div className="admin-content-text pb-4">Edit Product - {prodName}</div>
                 <Col sm="8">
                     <div className="text-form pb-2">Product Images</div>

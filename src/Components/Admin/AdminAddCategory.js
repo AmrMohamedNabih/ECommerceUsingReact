@@ -7,7 +7,7 @@ const AdminAddCategory = () => {
     const [img, name, loading, isPress, handelSubmit, onImageChange, onChangeName] = AddCategoryHook();
 
     return (
-        <div className="pt-10">
+        <div className="pt-3">
             <Row className="justify-content-start">
                 <div className="admin-content-text pb-4">Add New Category</div>
                 <Col sm="8">

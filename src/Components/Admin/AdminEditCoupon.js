@@ -10,7 +10,7 @@ const AdminEditCoupon = () => {
 
     return (
         <div>
-            <Row className="justify-content-start pt-10">
+            <Row className="justify-content-start pt-3">
                 <div className="admin-content-text pb-4">Edit Coupon Details</div>
                 <Col sm="8">
                     <input
