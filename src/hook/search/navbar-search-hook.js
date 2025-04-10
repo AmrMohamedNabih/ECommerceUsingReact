@@ -7,6 +7,7 @@ const NavbarSearchHook = () => {
     //when user type search word
     const OnChangeSearch = (e) => {
         localStorage.setItem("searchWord", e.target.value)
+        console.log(e.target.value);
         setSearchWord(e.target.value)
         const path = window.location.pathname;
         if (path != "/products") {

@@ -4,7 +4,7 @@ import SubTiltle from '../Uitily/SubTiltle'
 import ProductCard from './ProductCard'
 import CardContainerHook from '../../hook/products/card-container-hook'
 
-const CardProductsContainer = ({ title, btntitle, pathText, products }) => {
+const CardProductsContainerHome = ({ title, btntitle, pathText, products }) => {
   const [favProd] = CardContainerHook()
   const [displayProducts, setDisplayProducts] = useState([])
 
@@ -12,7 +12,9 @@ const CardProductsContainer = ({ title, btntitle, pathText, products }) => {
     const updateDisplayProducts = () => {
       if (products && products.length > 0) {
         const shuffled = [...products].sort(() => 0.5 - Math.random())
-        setDisplayProducts(shuffled)
+        const isMobile = window.innerWidth < 576
+        const count = isMobile ? 2 : 4
+        setDisplayProducts(shuffled.slice(0, count))
       }
     }
 
@@ -39,4 +41,4 @@ const CardProductsContainer = ({ title, btntitle, pathText, products }) => {
   )
 }
 
-export default CardProductsContainer
+export default CardProductsContainerHome

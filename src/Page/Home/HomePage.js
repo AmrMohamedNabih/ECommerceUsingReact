@@ -1,6 +1,6 @@
 import React from 'react'
 import HomeCategory from '../../Components/Home/HomeCategory';
-import CardProductsContainer from '../../Components/Products/CardProductsContainer';
+import CardProductsContainerHome from '../../Components/Products/CardProductsContainerHome';
 import CardBestsellersContainer from '../../Components/Products/CardBestsellersContainer';
 import NavBarLogin from '../../Components/Uitily/NavBarLogin';
 import Slider from './../../Components/Home/Slider';
@@ -18,7 +18,7 @@ const HomePage = () => {
             <HomeCategory />
             <CardBestsellersContainer products={items} title="Best Sellers"  />
             <DiscountSection />
-            <CardProductsContainer products={items} title="Products" btntitle="See More" pathText="/products" />
+            <CardProductsContainerHome products={items} title="Products" btntitle="See More" pathText="/products" />
         </div>
     )
 }
