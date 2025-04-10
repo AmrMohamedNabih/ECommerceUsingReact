@@ -49,7 +49,7 @@ const NavBarLogin = () => {
             <Container>
                 <Navbar.Brand>
                     <a href='/'>
-                        <img src={logo} className='w-16 h-16' />
+                        <img src={logo} className='w-16 h-16' alt="logo" />
                     </a>
                 </Navbar.Brand>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />

@@ -16,7 +16,7 @@ const AdminAddCategory = () => {
                         <label for="upload-photo">
                             <img
                                 src={img}
-                                alt="category"
+                                alt="uploadCategoryImage"
                                 height="100px"
                                 width="120px"
                                 style={{ cursor: "pointer" }}

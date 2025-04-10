@@ -14,7 +14,7 @@ const CategoryCard = ({ background, img, title, id }) => {
                 <div className="category-card">
                     <Link to={`/products/category/${id}`} style={{ textDecoration: 'none' }}>
                         <div className="category-img-wrapper">
-                            <img alt="zcv" src={img} className="category-card-img" />
+                            <img alt="categoryImage" src={img} className="category-card-img" />
                             <div className="category-hover-text">{title}</div>
                         </div>
                     </Link>

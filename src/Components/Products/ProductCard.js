@@ -17,7 +17,7 @@ const ProductCard = ({ item, favProd }) => {
         <Col className="d-flex">
             <Card className="my-2 product-card" style={{ backgroundColor: "rgba(239, 196, 195, 0.1)", borderRadius: "16px 16px 16px 16px" }}>
                 <Link to={`/products/${item._id}`} style={{ textDecoration: 'none' }}>
-                    <Card.Img style={{ height: "180px", objectFit: 'cover', borderRadius: '10px' }} src={item.imageCover} />
+                    <Card.Img style={{ height: "180px", objectFit: 'cover', borderRadius: '10px' }} src={item.imageCover} alt="productImage" />
                 </Link>
                 <Card.Body>
                     <Link to={`/products/${item._id}`} style={{ textDecoration: 'none' }}>

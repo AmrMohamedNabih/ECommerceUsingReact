@@ -24,7 +24,7 @@ const SearchCountResult = ({ title, onClick }) => {
                                 height="20px"
                                 className="ms-1"
                                 src={sort}
-                                alt=""
+                                alt="sortByIcon"
                             />
                             Sort By
                         </p>

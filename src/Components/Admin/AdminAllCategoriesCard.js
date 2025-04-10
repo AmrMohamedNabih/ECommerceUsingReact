@@ -76,6 +76,7 @@ const AdminAllCategoriesCard = ({ item }) => {
           <Card.Img
             style={{ height: "180px", objectFit: 'cover'}}
             src={item.image}
+            alt="categoryImage"
           />
           <Card.Body>
             <Card.Title>

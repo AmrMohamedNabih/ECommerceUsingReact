@@ -71,7 +71,7 @@ const AdminAllProductsCard = ({ item }) => {
                     </Col>
                 </Row>
                 <Link to={`/products/${item._id}`} style={{ textDecoration: 'none' }}>
-                    <Card.Img style={{ height: "180px", objectFit: 'cover', borderRadius: '10px' }} src={item.imageCover} />
+                    <Card.Img style={{ height: "180px", objectFit: 'cover', borderRadius: '10px' }} src={item.imageCover} alt="productImage" />
                     <Card.Body>
                         <Card.Title>
                             <div className="card-title">

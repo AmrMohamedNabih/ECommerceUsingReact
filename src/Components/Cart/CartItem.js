@@ -25,13 +25,13 @@ const CartItem = ({ item }) => {
         </Modal.Footer>
       </Modal>
 
-      <img width="160px" height="197px" src={item.product ? item.product.imageCover : mobile} alt="" />
+      <img width="160px" height="197px" src={item.product ? item.product.imageCover : mobile} alt="productImage" />
       <div className="w-100">
         <Row className="justify-content-between">
           <Col sm="12" className="d-flex flex-row justify-content-between">
             <div className="d-inline pt-2 cat-text">{item.product.category.name || ""}</div>
             <div onClick={handleShow} className="d-flex pt-2" style={{ cursor: "pointer" }}>
-              <img src={deleteicon} alt="" width="20px" height="24px" />
+              <img src={deleteicon} alt="deleteIcon" width="20px" height="24px"/>
               <div className="cat-text d-inline me-2">Remove</div>
             </div>
           </Col>
